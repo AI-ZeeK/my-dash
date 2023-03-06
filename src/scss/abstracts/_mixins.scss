@@ -1,0 +1,28 @@
+@mixin shadow-md {
+	box-shadow: rgba(50, 50, 93, 0.85) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.8) 0px 1px 3px -1px;
+}
+
+@mixin d-flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin btn-box {
+	@include d-flex-center;
+	gap: 0.4rem;
+	// border: 1px solid rgba(148, 148, 148, 0.4);
+	border-radius: 8px;
+	padding: 0.4rem 0.6rem;
+	cursor: pointer;
+	transition: all 200ms ease;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+	background-color: #fff;
+	&:hover {
+		background-color: #dddddd36;
+	}
+	&:active {
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+	}
+}

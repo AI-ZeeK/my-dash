@@ -1,0 +1,14 @@
+@use "./abstracts/media-query" as *;
+.chart-section {
+	padding: 1rem;
+
+	.chart-box {
+		transform: translateX(-2rem);
+	}
+}
+
+@include small-screen {
+	.chart-box {
+		transform: translateX(-2.8rem) !important;
+	}
+}

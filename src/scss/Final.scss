@@ -1,0 +1,166 @@
+@use "./abstracts/mixins" as *;
+@use "./abstracts/media-query" as *;
+
+.circle__spin svg {
+	width: 100%;
+	height: 100%;
+	animation: spin 10s linear infinite;
+}
+.circle__spin .svg1 circle {
+	stroke-width: 4;
+	stroke-dasharray: 34, 20;
+	fill: none;
+	stroke: orange;
+}
+.circle__spin .svg2 circle {
+	stroke-width: 4;
+	stroke-dasharray: 34, 120;
+	fill: none;
+	stroke: orange;
+}
+.svg .svg3 circle {
+	stroke-width: 4;
+	stroke-dasharray: 20, 20;
+	fill: none;
+}
+
+.final-section {
+	padding: 2rem 0rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	.final-link-box {
+		@include d-flex-center;
+		justify-content: flex-start;
+		gap: 2rem;
+		& > h1 {
+			font-size: 1.4rem;
+		}
+		.final-direct {
+			@include d-flex-center;
+			gap: 0.4rem;
+			font-size: 0.9rem;
+			font-weight: 700;
+			color: #5900ff;
+			cursor: pointer;
+			transition: 200ms ease;
+			&:hover {
+				color: #1c68ff;
+			}
+		}
+	}
+}
+
+.card-block {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	.card-box {
+		box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+		border-radius: 1rem;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		&:nth-child(2) {
+			.middle-tag {
+				background-color: orange !important;
+			}
+		}
+		&:nth-child(3) {
+			.middle-tag {
+				background-color: red !important;
+			}
+		}
+
+		.card-top {
+			display: grid;
+			grid-template-columns: 1fr 3fr;
+			gap: 02rem;
+			justify-content: flex-start;
+			align-items: center;
+			.progress-info {
+				display: flex;
+				flex-direction: column;
+				gap: 0.4rem;
+				justify-content: flex-start;
+				align-items: flex-start;
+
+				.progress-level {
+					font-size: 0.7rem;
+					padding: 0.2rem 0.8rem;
+					background: #cccccc44;
+					border-radius: 8px;
+					white-space: nowrap;
+				}
+				.level-time {
+					display: flex;
+					gap: 0.6rem;
+					align-items: center;
+					justify-content: flex-start;
+					font-size: 0.8rem;
+					.level-icon {
+						font-size: 0.9rem;
+						display: flex;
+					}
+				}
+			}
+		}
+
+		.progress-box {
+			display: flex;
+			font-size: 2.4rem;
+			justify-content: center;
+			align-items: center;
+			padding: 1rem;
+			// border: 1px solid red;
+			color: #1c68ff;
+			position: relative;
+
+			.svg {
+				position: absolute;
+			}
+		}
+		.card-middle {
+			display: flex;
+			flex-direction: column;
+			gap: 0.6rem;
+
+			.card-middle-top {
+				@include d-flex-center;
+				justify-content: flex-start;
+				gap: 1rem;
+
+				.middle-tag {
+					display: flex;
+					padding: 0.2rem 0.8rem;
+					font-size: 0.8rem;
+					background-color: #00ccff;
+					border-radius: 16px;
+					color: white;
+				}
+			}
+			.middle-msg {
+				font-size: 0.9rem;
+			}
+		}
+	}
+}
+
+.info-grey {
+	color: grey;
+}
+@include small-screen {
+	.final-link-box {
+		& > h1 {
+			font-size: 1.2rem !important;
+		}
+		.final-direct {
+			font-size: 0.8rem !important;
+		}
+	}
+	.card-box {
+		padding: 1.4rem 1rem !important;
+	}
+}
